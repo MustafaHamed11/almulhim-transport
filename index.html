@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مؤسسة صالح مقبل صالح الملحم للنقليات | Al-Mulhim Transport</title>
+    <meta name="description" content="Over 30 years of excellence in logistics & mass transit across Saudi Arabia.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0d233a',
+                        emerald: {
+                            DEFAULT: '#059669',
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Tajawal', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --neon-blue: #0070f3;
+            --neon-blue-light: #3291ff;
+            --neon-glow: rgba(0, 112, 243, 0.4);
+        }
+        
+        html { scroll-behavior: smooth; }
+        
+        /* Language Specific Typography */
+        html[dir="ltr"] body { font-family: 'Inter', sans-serif; }
+        html[dir="rtl"] body { font-family: 'Tajawal', sans-serif; }
+        
+        /* Immersive UI specific classes */
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #0f172a 0%, var(--neon-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .neon-shadow {
+            box-shadow: 0 10px 40px -10px var(--neon-glow);
+        }
+        
+        /* Spinner Animation */
+        .loader {
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top: 3px solid #ffffff;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* RTL/LTR logical margins for Lucide icons */
+        html[dir="rtl"] .icon-margin { margin-left: 0.5rem; margin-right: 0; }
+        html[dir="ltr"] .icon-margin { margin-right: 0.5rem; margin-left: 0; }
+        
+        html[dir="rtl"] .icon-margin-sm { margin-left: 0.25rem; margin-right: 0; }
+        html[dir="ltr"] .icon-margin-sm { margin-right: 0.25rem; margin-left: 0; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden selection:bg-[#3291ff] selection:text-slate-900">
+
+    <!-- Top Notification Bar -->
+    <div class="glass text-slate-700 text-sm py-2">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center text-center sm:text-start gap-2">
+            <div class="flex flex-wrap justify-center sm:justify-start items-center gap-4">
+                <a href="tel:0164227766" class="flex items-center hover:text-[#0070f3] transition">
+                    <i data-lucide="phone" class="w-4 h-4 icon-margin-sm"></i>
+                    <span dir="ltr">016 422 7766</span>
+                </a>
+                <a href="mailto:info@mulhim-bus.com" class="flex items-center hover:text-[#0070f3] transition">
+                    <i data-lucide="mail" class="w-4 h-4 icon-margin-sm"></i>
+                    <span>info@mulhim-bus.com</span>
+                </a>
+                <span class="hidden md:flex items-center text-slate-600">
+                    <i data-lucide="map-pin" class="w-4 h-4 icon-margin-sm"></i>
+                    <span data-i18n="top_location">الزلفي - المملكة العربية السعودية</span>
+                </span>
+            </div>
+            <div>
+                <button id="langToggle" class="flex items-center font-bold hover:text-[#0070f3] transition glass px-3 py-1 rounded-full text-xs" aria-label="Toggle Language">
+                    <i data-lucide="globe" class="w-4 h-4 icon-margin-sm"></i>
+                    <span id="langText" data-i18n="lang_btn">English</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 glass border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo / Title -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img src="logo.jpg" alt="Logo" class="w-12 h-12 md:w-14 md:h-14 object-contain">
+                    <div class="flex flex-col">
+                        <span class="font-bold text-lg md:text-xl text-slate-900 leading-tight" data-i18n="nav_logo">مؤسسة صالح مقبل الملحم</span>
+                        <span class="text-xs text-[#0070f3] font-semibold tracking-wide" data-i18n="nav_logo_sub">للنقليات</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex items-center gap-6 font-semibold text-sm">
+                    <a href="#home" class="text-slate-600 hover:text-[#0070f3] transition" data-i18n="nav_home">الرئيسية</a>
+                    <a href="#about" class="text-slate-600 hover:text-[#0070f3] transition" data-i18n="nav_about">من نحن</a>
+                    <a href="#services" class="text-slate-600 hover:text-[#0070f3] transition" data-i18n="nav_services">خدماتنا</a>
+                    <a href="#fleet" class="text-slate-600 hover:text-[#0070f3] transition" data-i18n="nav_fleet">الأسطول</a>
+                    <a href="#projects" class="text-slate-600 hover:text-[#0070f3] transition" data-i18n="nav_projects">المشاريع</a>
+                    <a href="#contact" class="bg-[#0070f3] text-white px-5 py-2.5 rounded-lg hover:bg-[#3291ff] transition neon-shadow hover:bg-[#3291ff] flex items-center">
+                        <span data-i18n="nav_cta">طلب عرض سعر</span>
+                        <i data-lucide="arrow-left" class="w-4 h-4 mx-2 rtl:hidden"></i>
+                        <i data-lucide="arrow-right" class="w-4 h-4 mx-2 ltr:hidden"></i>
+                    </a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="text-slate-900 hover:text-[#0070f3] focus:outline-none p-2">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden glass border-t border-slate-200 neon-shadow absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col font-medium">
+                <a href="#home" class="block px-3 py-3 rounded-md text-slate-600 hover:text-[#0070f3] hover:bg-slate-100" data-i18n="nav_home">الرئيسية</a>
+                <a href="#about" class="block px-3 py-3 rounded-md text-slate-600 hover:text-[#0070f3] hover:bg-slate-100" data-i18n="nav_about">من نحن</a>
+                <a href="#services" class="block px-3 py-3 rounded-md text-slate-600 hover:text-[#0070f3] hover:bg-slate-100" data-i18n="nav_services">خدماتنا</a>
+                <a href="#fleet" class="block px-3 py-3 rounded-md text-slate-600 hover:text-[#0070f3] hover:bg-slate-100" data-i18n="nav_fleet">الأسطول</a>
+                <a href="#projects" class="block px-3 py-3 rounded-md text-slate-600 hover:text-[#0070f3] hover:bg-slate-100" data-i18n="nav_projects">المشاريع</a>
+                <a href="#contact" class="block px-3 py-3 mt-4 text-center rounded-md bg-[#0070f3] text-white font-bold" data-i18n="nav_cta">طلب عرض سعر</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative py-20 lg:py-32 overflow-hidden">
+        <!-- Background accents -->
+        <div class="absolute inset-0 opacity-20 pointer-events-none">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-[#0070f3] rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
+            <div class="absolute top-1/2 -left-24 w-72 h-72 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="inline-flex items-center px-3 py-1 rounded-full glass text-[#0070f3] text-sm font-semibold border border-slate-200">
+                        <span class="relative flex h-2 w-2 icon-margin-sm">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0070f3] opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-[#3291ff]"></span>
+                        </span>
+                        <span data-i18n="hero_tag">شريكك الموثوق للنقل</span>
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black gradient-text leading-tight">
+                        <span data-i18n="hero_title">أكثر من 30 عاماً من الريادة في النقل واللوجستيات</span>
+                    </h1>
+                    
+                    <p class="text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed" data-i18n="hero_subtitle">
+                        نقدم حلول نقل متكاملة وآمنة وموثوقة على مستوى المملكة العربية السعودية، مدعومة بأسطول حديث وكادر احترافي.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="tel:0164227766" class="px-8 py-4 bg-[#0070f3] text-white rounded-lg font-bold text-center hover:bg-[#3291ff] transition neon-shadow flex items-center justify-center">
+                            <i data-lucide="phone-call" class="w-5 h-5 icon-margin"></i>
+                            <span data-i18n="hero_cta1">اتصل بنا الآن</span>
+                        </a>
+                        <a href="#services" class="px-8 py-4 glass text-slate-900 rounded-lg font-bold text-center border border-slate-300 hover:bg-white/20 transition flex items-center justify-center">
+                            <span data-i18n="hero_cta2">استكشف خدماتنا</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Stats Badges -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="glass backdrop-blur border border-slate-200 p-6 rounded-2xl hover:-translate-y-1 transition duration-300">
+                        <i data-lucide="award" class="text-[#0070f3] w-8 h-8 mb-4"></i>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-1" data-i18n="badge1_title">30+ عاماً</h3>
+                        <p class="text-slate-600 text-sm" data-i18n="badge1_desc">من الخبرة والتميز</p>
+                    </div>
+                    <div class="glass backdrop-blur border border-slate-200 p-6 rounded-2xl hover:-translate-y-1 transition duration-300">
+                        <i data-lucide="bus-front" class="text-[#0070f3] w-8 h-8 mb-4"></i>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-1" data-i18n="badge2_title">400+ حافلة</h3>
+                        <p class="text-slate-600 text-sm" data-i18n="badge2_desc">أسطول حديث ومجهز</p>
+                    </div>
+                    <div class="glass backdrop-blur border border-slate-200 p-6 rounded-2xl hover:-translate-y-1 transition duration-300">
+                        <i data-lucide="users" class="text-[#0070f3] w-8 h-8 mb-4"></i>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-1" data-i18n="badge3_title">500+ كادر</h3>
+                        <p class="text-slate-600 text-sm" data-i18n="badge3_desc">تشغيلي وسائق محترف</p>
+                    </div>
+                    <div class="glass backdrop-blur border border-slate-200 p-6 rounded-2xl hover:-translate-y-1 transition duration-300">
+                        <i data-lucide="trending-up" class="text-[#0070f3] w-8 h-8 mb-4"></i>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-1" data-i18n="badge4_title">99+ مليون ريال</h3>
+                        <p class="text-slate-600 text-sm" data-i18n="badge4_desc">قيمة العقود الحالية</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-sm font-bold text-[#0070f3] tracking-wider uppercase mb-2" data-i18n="nav_about">من نحن</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold gradient-text mb-6" data-i18n="about_title">نبذة عن المؤسسة</h3>
+                    <div class="space-y-4 text-slate-600 leading-relaxed text-lg">
+                        <p data-i18n="about_p1">
+                            تأسست مؤسسة صالح مقبل صالح الملحم للنقليات لتكون رائدة في مجال النقل والخدمات اللوجستية في المملكة. بفضل التزامنا الراسخ بالسلامة والموثوقية، نخدم قطاعات حيوية تشمل التعليم، الصحة، والجهات الحكومية.
+                        </p>
+                        <p data-i18n="about_p2">
+                            نحن نفخر بنسبة التوطين العالية للسائقين السعوديين، والالتزام التام بمعايير الهيئة العامة للنقل، بالإضافة إلى برامج الصيانة الدورية وورش العمل المتنقلة لضمان استمرارية الأعمال.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="glass p-6 rounded-xl border border-slate-200 neon-shadow">
+                        <div class="w-12 h-12 bg-blue-600/10 text-[#0070f3] rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2" data-i18n="val1_t">السلامة أولاً</h4>
+                        <p class="text-slate-600 text-sm" data-i18n="val1_d">أعلى معايير الأمان وبرامج تتبع متطورة لحماية الركاب.</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl border border-slate-200 neon-shadow">
+                        <div class="w-12 h-12 bg-blue-600/10 text-[#0070f3] rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="clock" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2" data-i18n="val2_t">دقة المواعيد</h4>
+                        <p class="text-slate-600 text-sm" data-i18n="val2_d">التزام تام بالجداول الزمنية للرحلات لضمان وصولك في الوقت المحدد.</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl border border-slate-200 neon-shadow">
+                        <div class="w-12 h-12 bg-blue-600/10 text-[#0070f3] rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="sofa" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2" data-i18n="val3_t">الراحة المطلقة</h4>
+                        <p class="text-slate-600 text-sm" data-i18n="val3_d">حافلات مكيفة ومجهزة بكافة سبل الراحة والخصوصية.</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl border border-slate-200 neon-shadow">
+                        <div class="w-12 h-12 bg-blue-600/10 text-[#0070f3] rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="wrench" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2" data-i18n="val4_t">الجاهزية التشغيلية</h4>
+                        <p class="text-slate-600 text-sm" data-i18n="val4_d">فرق طوارئ وصيانة متنقلة على مدار الساعة للتدخل السريع.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-sm font-bold text-[#0070f3] tracking-wider uppercase mb-2" data-i18n="nav_services">خدماتنا</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4" data-i18n="srv_title">خدماتنا الأساسية</h3>
+                <p class="text-slate-600 text-lg" data-i18n="srv_subtitle">حلول نقل مصممة خصيصاً لتلبية احتياجات مختلف القطاعات بجودة واحترافية.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="glass rounded-2xl p-8 neon-shadow hover:neon-shadow transition-all duration-300 border border-slate-200 group">
+                    <div class="w-14 h-14 bg-blue-50 text-[#0070f3] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#0070f3] group-hover:text-white transition-colors duration-300">
+                        <i data-lucide="graduation-cap" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3" data-i18n="srv1_t">النقل التعليمي والجامعي</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="srv1_d">نقل مخصص لطلاب وطالبات الجامعات والمدارس بجدولة دقيقة وإجراءات سلامة صارمة وفواصل خصوصية.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="glass rounded-2xl p-8 neon-shadow hover:neon-shadow transition-all duration-300 border border-slate-200 group">
+                    <div class="w-14 h-14 bg-blue-50 text-[#0070f3] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#0070f3] group-hover:text-white transition-colors duration-300">
+                        <i data-lucide="heart-pulse" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3" data-i18n="srv2_t">نقل المستشفيات والكوادر</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="srv2_d">خدمات ترددية يومية للمراكز الطبية والمستشفيات وفرق الرعاية الصحية المنزلية لضمان وصولهم براحة.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass rounded-2xl p-8 neon-shadow hover:neon-shadow transition-all duration-300 border border-slate-200 group">
+                    <div class="w-14 h-14 bg-blue-50 text-[#0070f3] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#0070f3] group-hover:text-white transition-colors duration-300">
+                        <i data-lucide="building-2" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3" data-i18n="srv3_t">تأجير الحافلات للشركات</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="srv3_d">تأجير مرن قصير وطويل الأجل للحافلات الحديثة، ومركبات النقل التنفيذي للجهات الحكومية والشركات.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="glass rounded-2xl p-8 neon-shadow hover:neon-shadow transition-all duration-300 border border-slate-200 group">
+                    <div class="w-14 h-14 bg-blue-50 text-[#0070f3] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#0070f3] group-hover:text-white transition-colors duration-300">
+                        <i data-lucide="moon-star" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3" data-i18n="srv4_t">خدمات الحج والعمرة</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="srv4_d">عمليات نقل متكاملة للحجاج والمعتمرين، القوات الأمنية، والدعم اللوجستي خلال المواسم الدينية بأسطول متكامل.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Capabilities -->
+    <section id="fleet" class="py-20 text-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="glass backdrop-blur p-6 rounded-xl border border-slate-200">
+                        <i data-lucide="map" class="text-[#0070f3] w-8 h-8 mb-4"></i>
+                        <h4 class="text-xl font-bold mb-2" data-i18n="fleet1_t">تتبع آلي 24/7</h4>
+                        <p class="text-slate-600 text-sm" data-i18n="fleet1_d">أنظمة GPS ذكية لمراقبة حركة الأسطول ومساراته لحظة بلحظة.</p>
+                    </div>
+                    <div class="glass backdrop-blur p-6 rounded-xl border border-slate-200 mt-0 sm:mt-8">
+                        <i data-lucide="blinds" class="text-[#0070f3] w-8 h-8 mb-4"></i>
+                        <h4 class="text-xl font-bold mb-2" data-i18n="fleet2_t">تجهيزات الخصوصية</h4>
+                        <p class="text-slate-600 text-sm" data-i18n="fleet2_d">ستائر وتظليل معتمد وتصميم داخلي يلبي احتياجات النقل النسائي والتعليمي.</p>
+                    </div>
+                    <div class="glass backdrop-blur p-6 rounded-xl border border-slate-200">
+                        <i data-lucide="settings" class="text-[#0070f3] w-8 h-8 mb-4"></i>
+                        <h4 class="text-xl font-bold mb-2" data-i18n="fleet3_t">صيانة متكاملة</h4>
+                        <p class="text-slate-600 text-sm" data-i18n="fleet3_d">ورش صيانة مركزية وفرق صيانة متنقلة للتدخل السريع لضمان الكفاءة.</p>
+                    </div>
+                    <div class="glass backdrop-blur p-6 rounded-xl border border-slate-200 mt-0 sm:mt-8">
+                        <i data-lucide="armchair" class="text-[#0070f3] w-8 h-8 mb-4"></i>
+                        <h4 class="text-xl font-bold mb-2" data-i18n="fleet4_t">رفاهية الركاب</h4>
+                        <p class="text-slate-600 text-sm" data-i18n="fleet4_d">تكييف عالي الكفاءة، مقاعد مريحة، وأنظمة سلامة متطورة في كافة الحافلات.</p>
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2">
+                    <h2 class="text-sm font-bold text-[#0070f3] tracking-wider uppercase mb-2" data-i18n="nav_fleet">الأسطول والجاهزية</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold gradient-text mb-6" data-i18n="fleet_title">الأسطول والتقنية</h3>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-8" data-i18n="fleet_subtitle">
+                        نمتلك أسطولاً حديثاً ومجهزاً بأحدث التقنيات لضمان أعلى درجات الأمان والراحة. جميع حافلاتنا تخضع لفحوصات دورية صارمة ومزودة بأنظمة تتبع متقدمة تضمن انسيابية العمليات وسلامة الركاب في كل رحلة.
+                    </p>
+                    <a href="#contact" class="inline-flex items-center px-6 py-3 bg-[#0070f3] text-white rounded-lg font-bold hover:bg-[#3291ff] transition">
+                        <span data-i18n="nav_cta">طلب عرض سعر</span>
+                        <i data-lucide="arrow-left" class="w-4 h-4 mx-2 rtl:hidden"></i>
+                        <i data-lucide="arrow-right" class="w-4 h-4 mx-2 ltr:hidden"></i>
+                    </a>
+                </div>
+            </div>
+        
+            <!-- Fleet Image Carousel -->
+            <div class="mt-16">
+                <div id="fleetCarousel" class="flex overflow-x-auto gap-6 snap-x snap-mandatory pb-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] scroll-smooth">
+                    
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[28rem] relative rounded-2xl overflow-hidden glass border border-slate-200 group neon-shadow">
+                        <img src="bus1.jpg" alt="Fleet Image 1" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                        
+                    </div>
+
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[28rem] relative rounded-2xl overflow-hidden glass border border-slate-200 group neon-shadow">
+                        <img src="bus2.jpg" alt="Fleet Image 2" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                        
+                    </div>
+
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[28rem] relative rounded-2xl overflow-hidden glass border border-slate-200 group neon-shadow">
+                        <img src="bus3.jpg" alt="Fleet Image 3" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                        
+                    </div>
+
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[28rem] relative rounded-2xl overflow-hidden glass border border-slate-200 group neon-shadow">
+                        <img src="bus4.jpg" alt="Fleet Image 4" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                        
+                    </div>
+
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[28rem] relative rounded-2xl overflow-hidden glass border border-slate-200 group neon-shadow">
+                        <img src="bus5.jpg" alt="Fleet Image 5" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                        
+                    </div>
+
+                    <div class="snap-center shrink-0 w-[85vw] md:w-[28rem] relative rounded-2xl overflow-hidden glass border border-slate-200 group neon-shadow">
+                        <img src="bus6.jpg" alt="Fleet Image 6" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                        
+                    </div>
+                    
+                </div>
+                
+                <!-- Carousel Navigation Controls -->
+                <div class="flex items-center justify-center gap-6 mt-6">
+                    <button id="carouselPrevBtn" class="w-12 h-12 flex items-center justify-center rounded-full bg-white text-[#0070f3] border border-slate-200 hover:bg-[#0070f3] hover:text-white transition-all neon-shadow group focus:outline-none focus:ring-2 focus:ring-[#0070f3] focus:ring-offset-2">
+                        <i data-lucide="chevron-right" class="w-6 h-6 rtl:hidden"></i>
+                        <i data-lucide="chevron-left" class="w-6 h-6 ltr:hidden"></i>
+                    </button>
+                    
+                    <span class="text-[#0070f3]/80 text-sm font-medium" data-i18n="fleet_scroll">تصفح صور الأسطول</span>
+                    
+                    <button id="carouselNextBtn" class="w-12 h-12 flex items-center justify-center rounded-full bg-white text-[#0070f3] border border-slate-200 hover:bg-[#0070f3] hover:text-white transition-all neon-shadow group focus:outline-none focus:ring-2 focus:ring-[#0070f3] focus:ring-offset-2">
+                        <i data-lucide="chevron-left" class="w-6 h-6 rtl:hidden"></i>
+                        <i data-lucide="chevron-right" class="w-6 h-6 ltr:hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    </section>
+
+    <!-- Projects & Clients -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-sm font-bold text-[#0070f3] tracking-wider uppercase mb-2" data-i18n="nav_projects">المشاريع والعملاء</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4" data-i18n="proj_title">مشاريعنا وشركاء النجاح</h3>
+                <p class="text-slate-600 text-lg" data-i18n="proj_subtitle">نفخر بخدمة كبرى المؤسسات والجهات الحكومية في المملكة من خلال عقود استراتيجية مستمرة.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Healthcare -->
+                <div class="glass rounded-2xl p-8 border border-slate-200">
+                    <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-200">
+                        <div class="w-10 h-10 bg-blue-600/20 text-blue-400 rounded-lg flex items-center justify-center">
+                            <i data-lucide="stethoscope" class="w-5 h-5"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900" data-i18n="proj_health">القطاع الصحي</h4>
+                    </div>
+                    <ul class="space-y-4 text-slate-600 font-medium">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0070f3] icon-margin mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="proj_h1">مدينة الملك سعود الطبية</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0070f3] icon-margin mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="proj_h2">مستشفى الملك فيصل التخصصي ومركز الأبحاث</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0070f3] icon-margin mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="proj_h3">المدينة الطبية بجامعة الملك سعود</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Education -->
+                <div class="glass rounded-2xl p-8 border border-slate-200">
+                    <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-200">
+                        <div class="w-10 h-10 bg-amber-600/20 text-amber-400 rounded-lg flex items-center justify-center">
+                            <i data-lucide="book-open" class="w-5 h-5"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900" data-i18n="proj_edu">القطاع التعليمي</h4>
+                    </div>
+                    <ul class="space-y-4 text-slate-600 font-medium">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0070f3] icon-margin mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="proj_e1">جامعة الملك فيصل بالأحساء</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0070f3] icon-margin mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="proj_e2">جامعة القصيم</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0070f3] icon-margin mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="proj_e3">جامعة حائل</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0070f3] icon-margin mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="proj_e4">جامعة نجران</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0070f3] icon-margin mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="proj_e5">جامعة الملك عبد العزيز</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0070f3] icon-margin mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="proj_e6">الهيئة الملكية بالجبيل الصناعية</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Government -->
+                <div class="glass rounded-2xl p-8 border border-slate-200">
+                    <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-200">
+                        <div class="w-10 h-10 bg-purple-600/20 text-purple-400 rounded-lg flex items-center justify-center">
+                            <i data-lucide="landmark" class="w-5 h-5"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900" data-i18n="proj_gov">القطاع الحكومي والصناعي</h4>
+                    </div>
+                    <ul class="space-y-4 text-slate-600 font-medium">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0070f3] icon-margin mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="proj_g1">وزارة الدفاع</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0070f3] icon-margin mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="proj_g2">المؤسسة العامة لتحلية المياه المالحة - SWCC</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0070f3] icon-margin mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="proj_g3">الأمن العام - وزارة الداخلية (مواسم الحج)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-[#0070f3] icon-margin mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="proj_g4">الشركة السعودية للخدمات الأرضية</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sister Companies -->
+            <div class="mt-16 pt-12 border-t border-slate-200">
+                <h4 class="text-center font-bold text-slate-500 uppercase tracking-widest mb-8" data-i18n="sis_title">الشركات الشقيقة الاستراتيجية</h4>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <div class="glass px-6 py-4 rounded-xl border border-slate-200 neon-shadow flex items-center gap-4">
+                        <i data-lucide="tent" class="w-6 h-6 text-slate-900"></i>
+                        <span class="font-bold text-slate-900" data-i18n="sis_1">شركة صالح لخدمات حجاج الداخل (تصريح 10117)</span>
+                    </div>
+                    <div class="glass px-6 py-4 rounded-xl border border-slate-200 neon-shadow flex items-center gap-4">
+                        <i data-lucide="hotel" class="w-6 h-6 text-slate-900"></i>
+                        <span class="font-bold text-slate-900" data-i18n="sis_2">شركة حياة الرياض الفندقية</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Details -->
+                <div>
+                    <h2 class="text-sm font-bold text-[#0070f3] tracking-wider uppercase mb-2" data-i18n="nav_contact">اتصل بنا</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4" data-i18n="contact_title">تواصل معنا</h3>
+                    <p class="text-slate-600 text-lg mb-8" data-i18n="contact_subtitle">نحن هنا للإجابة على استفساراتكم وتلبية طلباتكم بأسرع وقت.</p>
+
+                    <div class="space-y-6">
+                        <!-- Phones -->
+                        <div class="glass p-6 rounded-2xl neon-shadow border border-slate-200 flex items-start gap-4 hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-blue-600/10 text-[#0070f3] rounded-full flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-slate-900 mb-2" data-i18n="c_phone">الهاتف والمبيعات</h5>
+                                <div class="flex flex-col space-y-1">
+                                    <a href="tel:0164227766" class="text-slate-600 hover:text-[#0070f3] font-medium" dir="ltr">016 422 7766</a>
+                                    <a href="tel:0563674326" class="text-slate-600 hover:text-[#0070f3] font-medium" dir="ltr">056 367 4326 (Direct)</a>
+                                    <span class="text-slate-500 text-sm mt-1">Fax: <span dir="ltr">016 423 0448</span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Emails -->
+                        <div class="glass p-6 rounded-2xl neon-shadow border border-slate-200 flex items-start gap-4 hover:border-blue-300 transition">
+                            <div class="w-12 h-12 bg-blue-600/10 text-[#0070f3] rounded-full flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-slate-900 mb-2" data-i18n="c_email">البريد الإلكتروني</h5>
+                                <div class="flex flex-col space-y-1">
+                                    <a href="mailto:info@mulhim-bus.com" class="text-slate-600 hover:text-[#0070f3] font-medium">info@mulhim-bus.com</a>
+                                    <a href="mailto:gm@mulhim-bus.com" class="text-slate-600 hover:text-[#0070f3] font-medium">gm@mulhim-bus.com</a>
+                                    <a href="mailto:sales@mulhim-bus.com" class="text-slate-600 hover:text-[#0070f3] font-medium">sales@mulhim-bus.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map -->
+                        <div class="glass p-6 rounded-2xl neon-shadow border border-slate-200">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 bg-blue-600/10 text-[#0070f3] rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-slate-900" data-i18n="c_hq">المركز الرئيسي</h5>
+                                    <p class="text-slate-600 text-sm mt-1" data-i18n="c_address">4122 طريق الملك خالد، حي الخالدية، الزلفي، المملكة العربية السعودية</p>
+                                </div>
+                            </div>
+                            <!-- Google Map Placeholder (Al-Zulfi Area) -->
+                            <div class="w-full h-48 bg-slate-100 rounded-xl overflow-hidden">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113824.97022064508!2d44.7578278!3d26.3040331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fd8959d280b1df1%3A0xc3cf9c98a3b04c05!2sAl%20Zulfi%20Saudi%20Arabia!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="glass rounded-3xl neon-shadow p-8 lg:p-10 border border-slate-200">
+                    <h4 class="text-2xl font-bold text-slate-900 mb-8" data-i18n="form_title">طلب عرض سعر</h4>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-slate-600 mb-2" data-i18n="f_name">الاسم الكامل</label>
+                                <input type="text" id="name" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-[#0070f3] focus:border-[#0070f3] outline-none transition bg-white focus:bg-slate-100 text-slate-900">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-slate-600 mb-2" data-i18n="f_phone">رقم الجوال</label>
+                                <input type="tel" id="phone" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-[#0070f3] focus:border-[#0070f3] outline-none transition bg-white focus:bg-slate-100 text-slate-900" dir="ltr">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-600 mb-2" data-i18n="f_email">البريد الإلكتروني</label>
+                            <input type="email" id="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-[#0070f3] focus:border-[#0070f3] outline-none transition bg-white focus:bg-slate-100 text-slate-900">
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="service" class="block text-sm font-medium text-slate-600 mb-2" data-i18n="f_srv">نوع الخدمة</label>
+                                <select id="service" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-[#0070f3] focus:border-[#0070f3] outline-none transition bg-white focus:bg-slate-100 text-slate-900">
+                                    <option class="bg-slate-50" value="" disabled selected data-i18n="f_opt_def">اختر الخدمة...</option>
+                                    <option class="bg-slate-50" value="education" data-i18n="f_opt1">النقل التعليمي</option>
+                                    <option class="bg-slate-50" value="health" data-i18n="f_opt2">النقل الصحي</option>
+                                    <option class="bg-slate-50" value="commercial" data-i18n="f_opt3">التأجير الحكومي والتجاري</option>
+                                    <option class="bg-slate-50" value="hajj" data-i18n="f_opt4">خدمات الحج والعمرة</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="estimate" class="block text-sm font-medium text-slate-600 mb-2" data-i18n="f_est">العدد المتوقع</label>
+                                <input type="number" id="estimate" min="1" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-[#0070f3] focus:border-[#0070f3] outline-none transition bg-white focus:bg-slate-100 text-slate-900" placeholder="مثال: 50">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-slate-600 mb-2" data-i18n="f_msg">تفاصيل الطلب</label>
+                            <textarea id="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-[#0070f3] focus:border-[#0070f3] outline-none transition bg-white focus:bg-slate-100 text-slate-900 resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="w-full bg-[#0070f3] text-white font-bold neon-shadow py-4 rounded-lg hover:bg-[#0070f3] transition duration-300 flex justify-center items-center relative">
+                            <span id="submitText" data-i18n="f_submit">إرسال الطلب</span>
+                            <div id="submitSpinner" class="loader hidden absolute"></div>
+                        </button>
+                    </form>
+
+                    <!-- Toast Notification -->
+                    <div id="toast" class="fixed bottom-4 right-4 rtl:left-4 rtl:right-auto bg-[#0070f3] text-white px-6 py-4 rounded-lg shadow-2xl transform translate-y-24 opacity-0 transition-all duration-500 z-50 flex items-center gap-3">
+                        <i data-lucide="check-circle" class="w-6 h-6"></i>
+                        <span class="font-medium" data-i18n="toast_msg">تم إرسال طلبك بنجاح! سنتواصل معك قريباً.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class=" pt-16 pb-8 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="logo.jpg" alt="Logo" class="w-12 h-12 md:w-14 md:h-14 object-contain">
+                        <div class="flex flex-col">
+                            <span class="font-bold text-lg text-slate-900 leading-tight" data-i18n="nav_logo">مؤسسة صالح مقبل الملحم</span>
+                            <span class="text-xs text-[#0070f3] font-semibold tracking-wide" data-i18n="nav_logo_sub">للنقليات</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed max-w-sm mb-6" data-i18n="footer_desc">
+                        الخيار الأول والموثوق في خدمات النقل وتأجير الحافلات للقطاعات الحكومية والخاصة في المملكة العربية السعودية.
+                    </p>
+                    <div class="flex items-center gap-2 text-sm text-slate-500">
+                        <i data-lucide="file-text" class="w-4 h-4 text-[#0070f3]"></i>
+                        <span data-i18n="ft_cr">سجل تجاري:</span>
+                        <span dir="ltr">1131011504</span>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h5 class="text-slate-900 font-bold mb-6" data-i18n="ft_links">روابط سريعة</h5>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-slate-500 hover:text-[#0070f3] transition text-sm" data-i18n="nav_home">الرئيسية</a></li>
+                        <li><a href="#about" class="text-slate-500 hover:text-[#0070f3] transition text-sm" data-i18n="nav_about">من نحن</a></li>
+                        <li><a href="#services" class="text-slate-500 hover:text-[#0070f3] transition text-sm" data-i18n="nav_services">خدماتنا</a></li>
+                        <li><a href="#projects" class="text-slate-500 hover:text-[#0070f3] transition text-sm" data-i18n="nav_projects">المشاريع</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h5 class="text-slate-900 font-bold mb-6" data-i18n="ft_contact">تواصل معنا</h5>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-[#0070f3] flex-shrink-0 mt-0.5"></i>
+                            <span class="text-slate-500 text-sm" data-i18n="c_address">4122 طريق الملك خالد، حي الخالدية، الزلفي، المملكة العربية السعودية</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-[#0070f3] flex-shrink-0"></i>
+                            <a href="tel:0164227766" class="text-slate-500 hover:text-[#0070f3] transition text-sm" dir="ltr">016 422 7766</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-[#0070f3] flex-shrink-0"></i>
+                            <a href="mailto:info@mulhim-bus.com" class="text-slate-500 hover:text-[#0070f3] transition text-sm">info@mulhim-bus.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm text-center md:text-start" data-i18n="ft_copy">
+                    جميع الحقوق محفوظة &copy; 2024 مؤسسة صالح مقبل صالح الملحم للنقليات.
+                </p>
+                <div class="flex gap-4">
+                    <!-- Social placeholders if needed -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- App Logic (Language & Interactions) -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Contact Form Handling with Validation & Spinner
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const btn = document.getElementById('submitBtn');
+            const spinner = document.getElementById('submitSpinner');
+            const btnText = document.getElementById('submitText');
+            const toast = document.getElementById('toast');
+            
+            // Set Loading State
+            btn.disabled = true;
+            btnText.classList.add('opacity-0');
+            spinner.classList.remove('hidden');
+            
+            // Simulate Network Request
+            setTimeout(() => {
+                // Reset State
+                btn.disabled = false;
+                btnText.classList.remove('opacity-0');
+                spinner.classList.add('hidden');
+                contactForm.reset();
+                
+                // Show Toast
+                toast.classList.remove('translate-y-24', 'opacity-0');
+                
+                // Hide Toast after 4s
+                setTimeout(() => {
+                    toast.classList.add('translate-y-24', 'opacity-0');
+                }, 4000);
+            }, 1500);
+        });
+
+        // Translation Dictionary
+        const translations = {
+            ar: {
+                lang_btn: "English",
+                top_location: "الزلفي - المملكة العربية السعودية",
+                nav_logo: "مؤسسة صالح مقبل الملحم",
+                nav_logo_sub: "للنقليات",
+                nav_home: "الرئيسية",
+                nav_about: "من نحن",
+                nav_services: "خدماتنا",
+                nav_fleet: "الأسطول والجاهزية",
+                nav_projects: "المشاريع والعملاء",
+                nav_cta: "طلب عرض سعر",
+                hero_tag: "شريكك الموثوق للنقل",
+                hero_title: "أكثر من 30 عاماً من الريادة في النقل واللوجستيات",
+                hero_subtitle: "نقدم حلول نقل متكاملة وآمنة وموثوقة على مستوى المملكة العربية السعودية، مدعومة بأسطول حديث وكادر احترافي.",
+                hero_cta1: "اتصل بنا الآن",
+                hero_cta2: "استكشف خدماتنا",
+                badge1_title: "30+ عاماً",
+                badge1_desc: "من الخبرة والتميز",
+                badge2_title: "400+ حافلة",
+                badge2_desc: "أسطول حديث ومجهز",
+                badge3_title: "500+ كادر",
+                badge3_desc: "تشغيلي وسائق محترف",
+                badge4_title: "99+ مليون ريال",
+                badge4_desc: "قيمة العقود الحالية",
+                about_title: "نبذة عن المؤسسة",
+                about_p1: "تأسست مؤسسة صالح مقبل صالح الملحم للنقليات لتكون رائدة في مجال النقل والخدمات اللوجستية في المملكة. بفضل التزامنا الراسخ بالسلامة والموثوقية، نخدم قطاعات حيوية تشمل التعليم، الصحة، والجهات الحكومية.",
+                about_p2: "نحن نفخر بنسبة التوطين العالية للسائقين السعوديين، والالتزام التام بمعايير الهيئة العامة للنقل، بالإضافة إلى برامج الصيانة الدورية وورش العمل المتنقلة لضمان استمرارية الأعمال.",
+                val1_t: "السلامة أولاً",
+                val1_d: "أعلى معايير الأمان وبرامج تتبع متطورة لحماية الركاب.",
+                val2_t: "دقة المواعيد",
+                val2_d: "التزام تام بالجداول الزمنية للرحلات لضمان وصولك في الوقت المحدد.",
+                val3_t: "الراحة المطلقة",
+                val3_d: "حافلات مكيفة ومجهزة بكافة سبل الراحة والخصوصية.",
+                val4_t: "الجاهزية التشغيلية",
+                val4_d: "فرق طوارئ وصيانة متنقلة على مدار الساعة للتدخل السريع.",
+                srv_title: "خدماتنا الأساسية",
+                srv_subtitle: "حلول نقل مصممة خصيصاً لتلبية احتياجات مختلف القطاعات بجودة واحترافية.",
+                srv1_t: "النقل التعليمي والجامعي",
+                srv1_d: "نقل مخصص لطلاب وطالبات الجامعات والمدارس بجدولة دقيقة وإجراءات سلامة صارمة وفواصل خصوصية.",
+                srv2_t: "نقل المستشفيات والكوادر",
+                srv2_d: "خدمات ترددية يومية للمراكز الطبية والمستشفيات وفرق الرعاية الصحية المنزلية لضمان وصولهم براحة.",
+                srv3_t: "تأجير الحافلات للشركات",
+                srv3_d: "تأجير مرن قصير وطويل الأجل للحافلات الحديثة، ومركبات النقل التنفيذي للجهات الحكومية والشركات.",
+                srv4_t: "خدمات الحج والعمرة",
+                srv4_d: "عمليات نقل متكاملة للحجاج والمعتمرين، القوات الأمنية، والدعم اللوجستي خلال المواسم الدينية بأسطول متكامل.",
+                fleet_title: "الأسطول والتقنية",
+                fleet_subtitle: "نمتلك أسطولاً حديثاً ومجهزاً بأحدث التقنيات لضمان أعلى درجات الأمان والراحة. جميع حافلاتنا تخضع لفحوصات دورية صارمة ومزودة بأنظمة تتبع متقدمة تضمن انسيابية العمليات وسلامة الركاب في كل رحلة.",
+                fleet1_t: "تتبع آلي 24/7",
+                fleet1_d: "أنظمة GPS ذكية لمراقبة حركة الأسطول ومساراته لحظة بلحظة.",
+                fleet2_t: "تجهيزات الخصوصية",
+                fleet2_d: "ستائر وتظليل معتمد وتصميم داخلي يلبي احتياجات النقل النسائي والتعليمي.",
+                fleet3_t: "صيانة متكاملة",
+                fleet3_d: "ورش صيانة مركزية وفرق صيانة متنقلة للتدخل السريع لضمان الكفاءة.",
+                fleet4_t: "رفاهية الركاب",
+                fleet4_d: "تكييف عالي الكفاءة، مقاعد مريحة، وأنظمة سلامة متطورة في كافة الحافلات.",
+                proj_title: "مشاريعنا وشركاء النجاح",
+                proj_subtitle: "نفخر بخدمة كبرى المؤسسات والجهات الحكومية في المملكة من خلال عقود استراتيجية مستمرة.",
+                proj_health: "القطاع الصحي",
+                proj_h1: "مدينة الملك سعود الطبية",
+                proj_h2: "مستشفى الملك فيصل التخصصي ومركز الأبحاث",
+                proj_h3: "المدينة الطبية بجامعة الملك سعود",
+                proj_edu: "القطاع التعليمي",
+                proj_e1: "جامعة الملك فيصل بالأحساء",
+                proj_e2: "جامعة القصيم",
+                proj_e3: "جامعة حائل",
+                proj_e4: "جامعة نجران",
+                proj_e5: "جامعة الملك عبد العزيز",
+                proj_e6: "الهيئة الملكية بالجبيل الصناعية",
+                proj_gov: "القطاع الحكومي والصناعي",
+                proj_g1: "وزارة الدفاع",
+                proj_g2: "المؤسسة العامة لتحلية المياه المالحة - SWCC",
+                proj_g3: "الأمن العام - وزارة الداخلية (مواسم الحج)",
+                proj_g4: "الشركة السعودية للخدمات الأرضية",
+                sis_title: "الشركات الشقيقة الاستراتيجية",
+                sis_1: "شركة صالح لخدمات حجاج الداخل (تصريح 10117)",
+                sis_2: "شركة حياة الرياض الفندقية",
+                contact_title: "تواصل معنا",
+                contact_subtitle: "نحن هنا للإجابة على استفساراتكم وتلبية طلباتكم بأسرع وقت.",
+                c_phone: "الهاتف والمبيعات",
+                c_email: "البريد الإلكتروني",
+                c_hq: "المركز الرئيسي",
+                c_address: "4122 طريق الملك خالد، حي الخالدية، الزلفي، المملكة العربية السعودية",
+                form_title: "طلب عرض سعر",
+                f_name: "الاسم الكامل",
+                f_phone: "رقم الجوال",
+                f_email: "البريد الإلكتروني",
+                f_srv: "نوع الخدمة",
+                f_opt_def: "اختر الخدمة...",
+                f_opt1: "النقل التعليمي",
+                f_opt2: "النقل الصحي",
+                f_opt3: "التأجير الحكومي والتجاري",
+                f_opt4: "خدمات الحج والعمرة",
+                f_est: "العدد المتوقع للركاب / الحافلات",
+                f_msg: "تفاصيل الطلب",
+                f_submit: "إرسال الطلب",
+                toast_msg: "تم إرسال طلبك بنجاح! سنتواصل معك قريباً.",
+                footer_desc: "الخيار الأول والموثوق في خدمات النقل وتأجير الحافلات للقطاعات الحكومية والخاصة في المملكة العربية السعودية.",
+                ft_cr: "سجل تجاري:",
+                ft_links: "روابط سريعة",
+                ft_contact: "تواصل معنا",
+                ft_copy: "جميع الحقوق محفوظة © 2024 مؤسسة صالح مقبل صالح الملحم للنقليات.",
+                fleet_scroll: "استخدم الأسهم لتصفح الصور"
+            },
+            en: {
+                lang_btn: "عربي",
+                top_location: "Al-Zulfi - Kingdom of Saudi Arabia",
+                nav_logo: "Al-Mulhim Transport",
+                nav_logo_sub: "Establishment",
+                nav_home: "Home",
+                nav_about: "About Us",
+                nav_services: "Services",
+                nav_fleet: "Fleet",
+                nav_projects: "Clients",
+                nav_cta: "Request Quote",
+                hero_tag: "Your Trusted Transport Partner",
+                hero_title: "Over 30 Years of Leadership in Transport & Logistics",
+                hero_subtitle: "Providing integrated, safe, and reliable transport solutions across Saudi Arabia, powered by a modern fleet and professional crew.",
+                hero_cta1: "Call Now",
+                hero_cta2: "Explore Services",
+                badge1_title: "30+ Years",
+                badge1_desc: "Of Experience",
+                badge2_title: "400+ Buses",
+                badge2_desc: "Modern Fleet",
+                badge3_title: "500+ Staff",
+                badge3_desc: "Professional Crew",
+                badge4_title: "99M+ SAR",
+                badge4_desc: "Ongoing Contracts",
+                about_title: "About The Establishment",
+                about_p1: "Salih Muqbil Salih Al-Mulhim Transport Est. was founded to be a pioneer in transport and logistics in the Kingdom. With a firm commitment to safety and reliability, we serve vital sectors including education, healthcare, and government agencies.",
+                about_p2: "We pride ourselves on our high nationalization rate of Saudi drivers, strict adherence to Transport General Authority standards, regular maintenance programs, and mobile workshops ensuring uninterrupted business continuity.",
+                val1_t: "Safety First",
+                val1_d: "Highest safety standards and advanced tracking systems.",
+                val2_t: "Punctuality",
+                val2_d: "Strict adherence to trip schedules and timelines.",
+                val3_t: "Absolute Comfort",
+                val3_d: "Fully air-conditioned buses equipped for maximum comfort.",
+                val4_t: "Operational Readiness",
+                val4_d: "24/7 mobile maintenance and emergency response teams.",
+                srv_title: "Core Services",
+                srv_subtitle: "Tailored transport solutions meeting diverse sector needs with quality and professionalism.",
+                srv1_t: "Educational Transport",
+                srv1_d: "Dedicated transit for university and school students with punctual scheduling, strict safety measures, and privacy dividers.",
+                srv2_t: "Healthcare Staff Transport",
+                srv2_d: "Daily shuttle services for medical centers, hospitals, and home healthcare teams ensuring comfortable commutes.",
+                srv3_t: "Commercial & Govt Rental",
+                srv3_d: "Flexible short and long-term leases of modern buses, executive shuttles, and security vehicles for government and corporate clients.",
+                srv4_t: "Hajj & Umrah Services",
+                srv4_d: "Comprehensive transport operations for pilgrims, security forces, and logistical support during religious seasons.",
+                fleet_title: "Fleet & Technology",
+                fleet_subtitle: "We own a modern fleet equipped with the latest technologies to ensure maximum safety and comfort. All our buses undergo strict periodic inspections and feature advanced tracking systems for smooth operations.",
+                fleet1_t: "24/7 Automated Tracking",
+                fleet1_d: "Smart GPS systems for real-time fleet movement and route monitoring.",
+                fleet2_t: "Privacy Equipment",
+                fleet2_d: "Approved window tinting, curtains, and interior designs meeting educational needs.",
+                fleet3_t: "Integrated Maintenance",
+                fleet3_d: "Central maintenance workshops and rapid intervention mobile teams.",
+                fleet4_t: "Passenger Luxury",
+                fleet4_d: "High-efficiency AC, comfortable seating, and advanced safety systems.",
+                proj_title: "Projects & Partners",
+                proj_subtitle: "Proudly serving major institutions and government entities in the Kingdom through strategic contracts.",
+                proj_health: "Healthcare Sector",
+                proj_h1: "King Saud Medical City",
+                proj_h2: "King Faisal Specialist Hospital & Research Centre",
+                proj_h3: "King Saud University Medical City",
+                proj_edu: "Educational Sector",
+                proj_e1: "King Faisal University (Al-Ahsa)",
+                proj_e2: "Qassim University",
+                proj_e3: "University of Hail",
+                proj_e4: "Najran University",
+                proj_e5: "King Abdulaziz University",
+                proj_e6: "Royal Commission for Jubail",
+                proj_gov: "Government & Industrial",
+                proj_g1: "Ministry of Defense",
+                proj_g2: "Saline Water Conversion Corporation (SWCC)",
+                proj_g3: "Public Security - Ministry of Interior (Hajj Seasons)",
+                proj_g4: "Saudi Ground Services",
+                sis_title: "Strategic Sister Companies",
+                sis_1: "Saleh Domestic Pilgrims Company (License 10117)",
+                sis_2: "Hayat Al-Riyadh Hotel Company",
+                contact_title: "Contact Us",
+                contact_subtitle: "We are here to answer your inquiries and fulfill your requests promptly.",
+                c_phone: "Phone & Sales",
+                c_email: "Email Addresses",
+                c_hq: "Headquarters",
+                c_address: "4122 King Khalid Road, Al-Khalidiyah District, Al-Zulfi, Saudi Arabia",
+                form_title: "Request a Quote",
+                f_name: "Full Name",
+                f_phone: "Phone Number",
+                f_email: "Email Address",
+                f_srv: "Service Type",
+                f_opt_def: "Select a service...",
+                f_opt1: "Educational Transport",
+                f_opt2: "Healthcare Transport",
+                f_opt3: "Government/Commercial Rental",
+                f_opt4: "Hajj & Umrah Services",
+                f_est: "Estimated Passengers / Buses",
+                f_msg: "Request Details",
+                f_submit: "Submit Request",
+                toast_msg: "Your request has been sent successfully! We will contact you soon.",
+                footer_desc: "The first and trusted choice in transport and bus rental services for government and private sectors in Saudi Arabia.",
+                ft_cr: "CR:",
+                ft_links: "Quick Links",
+                ft_contact: "Contact",
+                ft_copy: "All Rights Reserved © 2024 Salih Muqbil Salih Al-Mulhim Transport Est.",
+                fleet_scroll: "Use arrows to browse images"
+            }
+        };
+
+        // Language Switcher Logic
+        let currentLang = 'ar';
+        const langToggleBtn = document.getElementById('langToggle');
+        const htmlElement = document.documentElement;
+
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            
+            // Set Document Direction and Lang attribute
+            htmlElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+            htmlElement.setAttribute('lang', currentLang);
+
+            // Update All Data-I18N tags
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.innerText = translations[currentLang][key];
+                }
+            });
+
+            // Specific RTL/LTR layout fixes that tailwind can't handle purely via logic
+            // (Tailwind's rtl: and ltr: variants handle most, but we can force re-render if needed)
+        });
+
+        // Carousel Navigation Logic
+        const carousel = document.getElementById('fleetCarousel');
+        const prevBtn = document.getElementById('carouselPrevBtn');
+        const nextBtn = document.getElementById('carouselNextBtn');
+
+        if (carousel && prevBtn && nextBtn) {
+            const getScrollAmount = () => {
+                const firstCard = carousel.firstElementChild;
+                return firstCard ? firstCard.offsetWidth + 24 : 350; // Card width + gap
+            };
+
+            prevBtn.addEventListener('click', () => {
+                const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+                const amount = getScrollAmount();
+                carousel.scrollBy({ left: isRtl ? amount : -amount, behavior: 'smooth' });
+            });
+
+            nextBtn.addEventListener('click', () => {
+                const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+                const amount = getScrollAmount();
+                carousel.scrollBy({ left: isRtl ? -amount : amount, behavior: 'smooth' });
+            });
+        }
+    </script>
+</body>
+</html>

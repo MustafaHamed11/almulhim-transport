@@ -1,0 +1,8 @@
+{
+  "name": "Salih Muqbil Salih Al-Mulhim Transport Est.",
+  "description": "Corporate showcase website for a leading Saudi transport enterprise offering mass transit and logistics solutions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
